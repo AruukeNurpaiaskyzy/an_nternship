@@ -14,7 +14,7 @@ def validate_phone_number(value):
 class User(AbstractUser):
     email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=15, unique=True)
-    age = models.PositiveIntegerField()
+    age = models.IntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
